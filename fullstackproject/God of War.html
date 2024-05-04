@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="game1.css" />
+   
+    <script>
+        function loai(sss) {
+            var x = document.getElementById("myFrame");
+            switch (sss) {
+                case 1: x.height = "350";
+                    break;
+                case 2: x.height = "350";
+                    break;
+                case 3: x.height = "390s";
+                    break;
+                case 4: x.height = "410";
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 align="center">God of War</h1>
+        </header>
+        <div style="display:flex;">
+            <div style="display:flex;flex-direction:column;width:50%;">
+                <a href="about God of War.html#about" target='iframe' onclick="loai(1)">God of War </a>
+                <a href="about God of War.html#Gameplay" target='iframe' onclick="loai(2)">Gameplay </a>
+                <a href="about God of War.html#Development" target='iframe' onclick="loai(3)">Development </a>
+                <a href="about God of War.html#Plot" target='iframe' onclick="loai(4)">Plot </a>
+            </div>
+            <img src="God_of_War_4_cover.jpg" style="margin-right:40%" />
+        </div>
+        <iframe width="100%" height="300" style="border:none;" id="myFrame" name='iframe'>
+        </iframe>
+
+    </div>
+</body>
+</html>

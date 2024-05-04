@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Developers Page</title>
+  <style>
+    body {
+     background-image: url("back1.jpg");
+    
+    }
+    h1 {
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+   
+    }
+    .developer-card {
+      width: 300px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+    .developer-card h2, .developer-card p {
+      margin: 0;
+      color: white;
+      background-color: #808080;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .joinForm {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #808080;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .joinForm textarea {
+    color:black;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+
+    }
+    .joinForm label{
+      display: block;
+      margin-bottom: 10px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+
+    }
+    .joinForm input[type="submit"]{
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-bottom: 10px;
+        display: block;
+
+    }
+  </style>
+</head>
+<body>
+  <h1>Developers</h1>
+  <form class="joinForm" id="joinForm">
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput" required><br>
+  
+    <label for="roleInput">Role:</label>
+    <input type="text" id="roleInput" required><br>
+  
+    <label for="skillsInput">Skills:</label>
+    <textarea id="skillsInput" rows="4" required></textarea><br>
+  
+    <button type="submit">Join</button>
+  </form>
+  
+  <div id="developersContainer"></div>
+  
+  <script>
+    class Developer {
+  constructor(name, skills, role) {
+    this.name = name;
+    this.skills = skills;
+    this.role = role;
+  }
+  toString() {
+  return `Form ID: ${this.form.id}\nName Input: ${this.nameInput}\nEmail Input: ${this.emailInput}\nMessage Input: ${this.messageInput}\nName: ${this.name}\nSkills: ${this.skills}\nRole: ${this.role}`;
+  }
+  get name() {
+    return this._name;
+  }
+
+  set name(newName) {
+    this._name = newName;
+  }
+
+  get skills() {
+    return this._skills;
+  }
+
+  set skills(newSkills) {
+    this._skills = newSkills;
+  }
+
+  get role() {
+    return this._role;
+  }
+
+  set role(newRole) {
+    this._role = newRole;
+  }
+
+  render() {
+    const container = document.getElementById("developersContainer");
+    const card = document.createElement("div");
+    card.classList.add("developer-card");
+
+    const nameHeading = document.createElement("h2");
+    nameHeading.textContent = this.name;
+
+    const roleParagraph = document.createElement("p");
+    roleParagraph.textContent = "Role: " + this.role;
+
+    const skillsParagraph = document.createElement("p");
+    skillsParagraph.textContent = "Skills: " + this.skills.join(", ");
+
+    card.appendChild(nameHeading);
+    card.appendChild(roleParagraph);
+    card.appendChild(skillsParagraph);
+    container.appendChild(card);
+  }
+}
+
+const joinForm = document.getElementById("joinForm");
+joinForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const name = document.getElementById("nameInput").value;
+  const role = document.getElementById("roleInput").value;
+  const skills = document.getElementById("skillsInput").value.split("\n");
+
+  const newDeveloper = new Developer(name, skills, role);
+  newDeveloper.render();
+
+  joinForm.reset();
+});
+
+const developer1 = new Developer("John Doe", ["JavaScript", "HTML", "CSS"], "Front-end Developer");
+const developer2 = new Developer("Jane Smith", ["Python", "Java", "SQL"], "Back-end Developer");
+
+developer1.render();
+developer2.render();
+
+  
+  </script>
+</body>
+</html>

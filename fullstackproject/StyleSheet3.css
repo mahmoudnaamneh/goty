@@ -1,0 +1,22 @@
+﻿body {
+    background-image: url("back1.jpg");
+    
+}
+.flex-container {
+    color: white;
+    text-align: center;
+    background-color: #808080;
+    width: 500px;
+    margin: auto;
+    margin-top: 120px;
+    border-radius: 8px 8px;
+    padding: 10px;
+    font-family:Arial;
+    
+    
+}
+h1 {
+    color: white;
+    font-family: Arial;
+   
+}

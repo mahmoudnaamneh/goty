@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("back1.jpg");
+        }
+
+        h1 {
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+        p {
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .fanForm {
+            color: white;
+            text-align: center;
+            background-color: #808080;
+            width: 500px;
+            margin: auto;
+            margin-top: 120px;
+            border-radius: 8px 8px;
+            padding: 10px;
+            font-family: Arial;
+        }
+
+            .fanForm label, .fanForm input, .fanForm button {
+                display: block;
+                margin-bottom: 15px;
+            }
+    </style>
+</head>
+<body>
+    <h1>Fan Form</h1>
+    <p id="fan-count"></p>
+    <form class="fanForm" id="fanForm">
+        <div>
+            <label for="nameInput">Name:</label>
+            <center><input type="text" id="nameInput" /></center>
+        </div>
+        <div>
+            <label for="emailInput">Email:</label>
+            <center>  <input type="email" id="emailInput" /></center>
+        </div>
+        <div>
+            <label for="messageInput">Message:</label>
+            <center>  <textarea id="messageInput"></textarea></center>
+        </div>
+        <div>
+            <center>  <button type="submit" id="submitBtn">Be A Fan</button></center>
+        </div>
+    </form>
+    <script>
+        class FanForm {
+            constructor(formId) {
+                this.form = document.getElementById(formId);
+                this.nameInput = this.form.querySelector("#nameInput");
+                this.emailInput = this.form.querySelector("#emailInput");
+                this.messageInput = this.form.querySelector("#messageInput");
+                this.fansCount = 0;
+
+                this.form.addEventListener("submit", this.handleSubmit.bind(this));
+            }
+
+            get nameInput() {
+                return this._nameInput;
+            }
+
+            
+            set nameInput(newNameInput) {
+                this._nameInput = newNameInput;
+            }
+
+            get emailInput() {
+                return this._emailInput;
+            }
+
+            set emailInput(newEmailInput) {
+                this._emailInput = newEmailInput;
+            }
+
+            get messageInput() {
+                return this._messageInput;
+            }
+
+            set messageInput(newMessageInput) {
+                this._messageInput = newMessageInput;
+            }
+            calculateFansCount() {
+                this.fansCount++;
+
+                document.getElementById("fan-count").textContent = "Number of Fans:" + this.fansCount;
+
+            }
+            toString() {
+                return `Form ID: ${this.form.id}\nName Input: ${this.nameInput}\nEmail Input: ${this.emailInput}\nMessage Input: ${this.messageInput}`;
+            }
+            handleSubmit(event) {
+                event.preventDefault();
+
+                const name = this.nameInput.value;
+                const email = this.emailInput.value;
+                const message = this.messageInput.value;
+
+                alert("Now You Are A Fan");
+                this.calculateFansCount();
+
+                this.form.reset();
+
+                console.log("Name:", name);
+                console.log("Email:", email);
+                console.log("Message:", message);
+            }
+        }
+
+        const fanForm = new FanForm("fanForm");
+
+    </script>
+</body>
+</html>

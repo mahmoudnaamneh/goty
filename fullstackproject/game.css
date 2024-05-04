@@ -1,0 +1,13 @@
+﻿body {
+    overflow: hidden;
+}
+h2 {
+    color: aliceblue;
+    text-shadow: 2px 2px 2px black;
+}
+pre {
+    color: aliceblue;
+    font-size: 15px;
+    text-shadow: 2px 2px 2px black;
+}
+

@@ -1,0 +1,21 @@
+﻿body{
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 22px;
+    text-shadow: 2px 2px 2px black;
+}
+h1 {
+    color: aliceblue;
+    font-family: Arial;
+    text-shadow: 2px 2px 2px black;
+}
+body {
+    background-image: url("game of the year 2021.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+    

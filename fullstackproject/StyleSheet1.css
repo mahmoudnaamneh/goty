@@ -1,0 +1,170 @@
+﻿body {
+    overflow:auto;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "ubuntu";
+}
+
+img {
+    width: 150px;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    background: black;
+}
+
+    header .header-left {
+        display: flex;
+        align-items: center;
+    }
+
+        header .header-left .logo {
+            width: 140px;
+        }
+
+        header .header-left nav {
+            margin-left: 50px;
+        }
+
+            header .header-left nav ul {
+                display: flex;
+            }
+
+nav ul li a {
+    background-color: black;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+    nav ul li a:hover,
+    nav ul li a.active {
+        background-color: white;
+        color: black;
+    }
+
+nav .login-signup {
+    display: none;
+}
+
+header .header-right {
+    display: flex;
+    align-items: center;
+}
+
+header .login-signup {
+    color: white;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+    header .login-signup a {
+        display: inline-block;
+        background-color: black;
+        color: white;
+        padding: 14px 25px;
+        border-radius: 5px;
+        font-family: Arial;
+        font-size: 20px;
+    }
+    header .login-signup a:hover,header .login-signup a.active  {
+        display: inline-block;
+        background-color: white;
+        color: black ;
+        padding: 14px 25px;
+        border-radius: 5px;
+    }
+header .header-right .hamburger {
+    margin-left: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+    header .header-right .hamburger div {
+        width: 30px;
+        height: 2px;
+        margin: 6px 0;
+        background: #fff;
+    }
+
+@media only screen and (max-width: 1000px) {
+    header {
+        padding: 0 20px;
+    }
+
+        header .header-right .hamburger {
+            display: block;
+        }
+
+        header .header-left nav {
+            margin: 0;
+            position: absolute;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: fit-content;
+            background-color: black;
+            padding: 30px;
+            transition: 0.3s;
+            text-align: center;
+            z-index: -1;
+        }
+
+            header .header-left nav.active {
+                top: 70px;
+            }
+
+            header .header-left nav ul {
+                display: block;
+            }
+}
+
+@media only screen and (max-width: 500px) {
+    nav .login-signup {
+        display: block;
+        margin-top: 20px;
+    }
+
+    header .header-right .login-signup {
+        display: none;
+    }
+}
+.container {
+    display: flex;    
+    flex-direction: column; 
+    height: 100vh; 
+    color: white;
+    text-align: center;
+}
+
+.content-body {
+    font-family: Arial;
+    font-size: 15px;
+    color: white;
+    display: flex;   
+    flex-direction: row; 
+    flex: 1;
+}
+
+    .content-body .content {
+        flex: 3 3;
+        overflow: auto; 
+        
+    }

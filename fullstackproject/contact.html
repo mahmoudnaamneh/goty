@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Us</title>
+  <style>
+    body {
+      background-image: url("back1.jpg");
+    
+    }
+    h1 {
+      color: white;
+      font-family: Arial;
+      text-align: center;
+   
+    }
+    .contact-form {
+      color: white;
+      text-align: center;
+      background-color: #808080;
+      width: 500px;
+      margin: auto;
+      margin-top: 120px;
+      border-radius: 8px 8px;
+      padding: 10px;
+      font-family:Arial;
+    }
+    .contact-form label, .contact-form input, .contact-form textarea, .contact-form button {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contact Us</h1>
+  <div class="contact-form">
+    <label for="name">Name:</label>
+    <center><input type="text" id="name" required></center>
+    <label for="email">Email:</label>
+    <center><input type="email" id="email" required></center>
+    <label for="message">Message:</label>
+    <center><textarea id="message" rows="4" required></textarea></center>
+    <center><button id="submitBtn">Submit</button></center>
+  </div>
+
+  <script>
+    class ContactForm {
+      constructor() {
+        this.nameInput = document.getElementById("name");
+        this.emailInput = document.getElementById("email");
+        this.messageInput = document.getElementById("message");
+        this.submitBtn = document.getElementById("submitBtn");
+
+        this.submitBtn.addEventListener("click", this.submitForm.bind(this));
+      }
+      get name() {
+        return this.nameInput.value;
+      }
+
+      set name(value) {
+         this.nameInput.value = value;
+      }
+
+      get email() {
+        return this.emailInput.value;
+      }
+
+      set email(value) {
+        this.emailInput.value = value;
+      }
+
+      get message() {
+        return this.messageInput.value;
+      }
+
+      set message(value) {
+        this.messageInput.value = value;
+      }
+
+      get submitButton() {
+        return this.submitBtn;
+      }
+
+      submitForm() {
+        var name = this.nameInput.value;
+        var email = this.emailInput.value;
+        var message = this.messageInput.value;
+
+        alert("Name: " + name + "\nEmail: " + email + "\nMessage: " + message);
+        
+        alert("Thanks For Submitting ");
+
+        this.nameInput.value = "";
+        this.emailInput.value = "";
+        this.messageInput.value = "";
+      }
+
+      toString(){
+        return "name: "+nameInput+", email:"+emailInput+", message:"+messageInput+", submit: "+submitBtn;
+      }
+    }
+
+    var contactForm = new ContactForm();
+  </script>
+</body>
+</html>

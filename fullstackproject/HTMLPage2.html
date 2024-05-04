@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="StyleSheet2.css" />
+    <style>
+        #myProgress {
+          width: 100%;
+          height: 30px;
+          position: relative;
+          background-color: #ddd;
+        }
+        
+        #myBar {
+          background-color: gray;
+          width: 10px;
+          height: 30px;
+          position: absolute;
+        }
+        </style>
+</head>
+<body onload = "swapImage()">
+    
+
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+
+<br>
+<button onclick="move()">Do Not Click (Joke)</button> 
+
+    <h1>Home</h1>
+    <h2>&nbsp;&nbsp;&nbsp;&nbsp;About:</h2>
+    <pre id="g" dir="ltr">
+     The Game Awards is an annual awards ceremony honoring achievements in the video game industry.
+     Established in 2014, the shows are produced and hosted by game journalist Geoff Keighley, 
+     who worked on its predecessor, the Spike Video Game Awards, for over ten years.
+     In addition to the awards, The Game Awards features premieres of upcoming games and new information
+     on previously-announced titles.
+    </pre>
+    <h2>&nbsp;&nbsp;&nbsp;&nbsp;Who We Are:</h2>
+    <pre  dir="ltr">
+     THE GAME AWARDS RECOGNIZES AND UPHOLDS CREATIVE AND TECHNICAL EXCELLENCE IN THE GLOBAL VIDEO GAME INDUSTRY.
+     We bring together a diverse group of game developers, game players, and notable names from popular culture to
+     celebrate and advance gaming's position as the most immersive, challenging and inspiring form of entertainment.
+     We strive to recognize those who improve the wellbeing of the community and elevate voices that represent the future of the medium.
+     </pre>
+
+    <script>
+            function move() {
+             const element = document.getElementById("myBar");   
+             let width = 0;
+             const id = setInterval(frame, 10);
+            function frame() {
+                  if (width == 100) {
+                    clearInterval(id);
+                  } else {
+                     width++; 
+                     element.style.width = width + '%'; 
+                    }
+                }
+            }
+            var i = 0;
+
+            var photo = new Array();
+
+            photo[0] = "Dragon Age.jpg";
+            photo[1] = "Witcher_3_cover_art.jpg";
+            photo[2] = "about Overwatch.jpg";
+            photo[3] = "The Legend of Zelda.jpg";
+            photo[4] = "God_of_War_4_cover.jpg";
+            photo[5] = "Sekiro.jpg";
+            photo[6] = "The Last of Us.png";
+            photo[7] = "It_Takes_Two_cover_art.png";
+            photo[8] = "Elden Ring.jpg";
+
+
+            function swapImage() {
+                document.getElementById("slide").src = photo[i];
+            if (i < photo.length - 1)
+            i++;
+            else i = 0;
+
+            setTimeout("swapImage()", 1500);
+            }
+
+    </script>
+    
+    <center><img id="slide" width="250" height="250" /></center>
+    
+</body>
+</html>

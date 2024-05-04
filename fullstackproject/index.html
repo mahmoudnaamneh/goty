@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>GOTY</title>
+    <link rel="stylesheet" href="StyleSheet1.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-left">
+                <div class="logo">
+                    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="final.png" alt="">
+                </div>
+                <nav id="myDIV">
+                    <ul>
+                        <li>
+                            <a href="HTMLPage2.html" class="active" target='iframe' onclick="func(0)">Home</a>&nbsp;&nbsp;
+                        </li>
+                        <li>
+                            <a href="HTMLPage3.html" target='iframe' onclick="func(1)">History</a>&nbsp;&nbsp;
+                        </li>
+                        <li>
+                            <a href="HTMLPage4.html" target='iframe' onclick="func(2)">Process</a>&nbsp;&nbsp;
+                        </li>
+                        <li>
+                            <a href="WINNERS.html" target='iframe' onclick="func(3)">Nominess</a>&nbsp;&nbsp;
+                        </li>
+                        <li>
+                            <a href="HTMLPage6.html" target='iframe' onclick="func(4)">News</a>&nbsp;&nbsp;
+                        </li>
+                        <li>
+                            <a href="HTMLPage7.html" target='iframe' onclick="func(5)">Watch</a>&nbsp;&nbsp;
+                        </li>
+                       <!--
+                        <li>
+                        <a href="HTMLPage9.html"  target='iframe' onclick="func(6)">Be A Fan</a>
+                       </li>
+                       -->
+                       <li>
+                        <a href="HTMLPage10.html"  target='iframe' onclick="func(6)">Developers</a>
+                       </li>
+                       <li>
+                        <a href="HTMLPage11.html"  target='iframe' onclick="func(7)">Contact Us</a>
+                       </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-right">
+              
+               <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </header>
+        <div class="content-body">
+
+            <iframe src="HTMLPage2.html" style="border:none;" height="1080" width="1920" class="content" name='iframe'>
+            </iframe>
+        </div>
+    </div>
+        
+            <script>
+                function bigImg(x) {
+                   x.style.width = "200px";
+                }
+
+                function normalImg(x) {
+                  x.style.width = "150px";
+                }
+
+                hamburger = document.querySelector(".hamburger");
+                nav = document.querySelector("nav");
+                hamburger.onclick = function () {
+                    nav.classList.toggle("active");
+                }
+
+
+                var btnContainer = document.getElementById("myDIV");
+
+                function func(x) {
+                        var ul_list = btnContainer.children[0];
+                        let current = ul_list.children[x].children[0];
+                        let whereisit=0;
+                        for(let i=0;i<ul_list.children.length;i++)
+                            if(ul_list.children[i].children[0].classList.contains("active")) whereisit=i;
+                        if(whereisit==x)return ;
+                        ul_list.children[whereisit].children[0].classList.remove("active");
+                        current.classList.add("active");
+                }
+               
+            </script>
+</body>
+</html>

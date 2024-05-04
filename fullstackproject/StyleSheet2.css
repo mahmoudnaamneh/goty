@@ -1,0 +1,27 @@
+﻿body {
+    background-image: url("back1.jpg");
+}
+h1 {
+    text-shadow: 2px 2px 2px black;
+    font-family: Arial;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+h2 {
+    text-shadow: 2px 2px 2px black;
+    font-family: Arial;
+    font-size: 35px;
+    color: white;
+    
+}
+pre {
+    text-shadow: 2px 2px 2px black;
+    font-family: Arial;
+    font-size: 20px;
+    color: white;
+    line-height: 1.7;
+    font-weight:bold;
+}
+
+
